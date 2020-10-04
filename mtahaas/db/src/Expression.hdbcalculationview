@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="Sample_Models_Cloud.mod::Expression" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="Expression"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="Sample_Models_Cloud.mod.tables::Customer">
+    <resourceUri>Sample_Models_Cloud.mod.tables::Customer</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Sample_Models_Cloud.mod.tables::Customer">
+  <attributes>
+    <attribute id="CUSTOMER_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTOMER_ID"/>
+      <keyMapping columnObjectName="Customer" columnName="CUSTOMER_ID"/>
+    </attribute>
+    <attribute id="REGION" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REGION"/>
+      <keyMapping columnObjectName="Customer" columnName="REGION"/>
+    </attribute>
+    <attribute id="LOCATION" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOCATION"/>
+      <keyMapping columnObjectName="Customer" columnName="LOCATION"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="CC_1" order="6" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NOW()</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures>
+    <measure id="LONGITUDE" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LONGITUDE"/>
+      <measureMapping columnObjectName="Customer" columnName="LONGITUDE"/>
+    </measure>
+    <measure id="LATITUDE" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LATITUDE"/>
+      <measureMapping columnObjectName="Customer" columnName="LATITUDE"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="false" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="194"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario> 
