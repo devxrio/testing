@@ -1,0 +1,1 @@
+<RepTask Name="simple1.hdb::myreptask" Description="" Type="REALTIME" RepVersion="2.0"><SourceObjects SourceType="" TTFullyQualifiedName="FALSE" VTFullyQualifiedName="FALSE" RemoteSourceName="" VirtualTableSchema=""><SourceObject></SourceObject></SourceObjects><TargetObjects><TargetObject></TargetObject></TargetObjects></RepTask>
